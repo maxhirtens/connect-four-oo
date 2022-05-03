@@ -1,34 +1,65 @@
-/* game board table */
-
-#board td {
-  width: 50px;
-  height: 50px;
-  border: solid 1px #666;
+* {
+  font-family: Ubuntu;
 }
 
+body{
+  background-color:rgba(252, 88, 51, 0.724);
+  margin-left: 5vw;
+}
+
+/* game board table */
+#board  {
+  position: relative;
+}
+
+#board td {
+  width: 60px;
+  height: 60px;
+  /* min-width: 60px; */
+  border: solid 2px #666;
+}
+
+h1  {
+  font-size: 4rem;
+  color:rgba(255, 255, 255, 0.74)
+}
+
+h4  {
+  font-size: 1rem;
+  color:rgba(255, 255, 255, 0.74)
+}
+
+button, input{
+  font-size: 1.25rem;
+  background-color:rgba(255, 255, 255, 0.74)
+}
 /* pieces are div within game table cells: draw as colored circles */
 
+@keyframes fall {
+  from {
+    margin-top: -600%;
+  }
+
+  to {
+    margin-top: 0%;
+  }
+}
+
 .piece {
+  border-radius: 50%;
   margin: 5px;
   width: 80%;
   height: 80%;
-  border-radius: 50%;
+  animation-duration: 1s;
+  animation-name: fall;
+  /* position: absolute; */
 }
-
-.piece.p1 {
-  background-color: red;
-}
-
-.piece.p2 {
-  background-color: blue;
-}
-
 /* column-top is table row of clickable areas for each column */
-
 #column-top td {
-  border: dashed 1px lightgray;
+  border: dashed 2px rgb(125, 125, 125);
 }
 
+/* like to have hover color be currPlayer color */
 #column-top td:hover {
-  background-color: gold;
+  background-color: rgba(158, 158, 158, 0.97);
 }
